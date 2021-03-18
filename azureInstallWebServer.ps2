@@ -1,13 +1,15 @@
 #Define CSS for table
 $header = @"
-<style>
-  <h3>schrodinger's cat is alive</h3>
-  <p/>
-  <p/>
-  <p/>
-  <p/>
-  KITNAY LOG THAY!!!!
-</style>
+<HTML>
+    <body>
+            <h3>schrodinger's cat is alive</h3>
+            <p/>
+            <p/>
+            <p/>
+            <p/>
+            KITNAY LOG THAY!!!!
+    </body>
+</HTML>
 "@
 
 #Install IIS
@@ -17,5 +19,4 @@ Install-WindowsFeature -name Web-Server
 $metadata = Invoke-RestMethod -Headers @{"Metadata"="true"} -URI http://169.254.169.254/metadata/instance?api-version=2017-08-01 -Method get
 
 #Convert object to HTML and overwrite existing index
-$HTML = $body | ConvertTo-Html -Title "WebServer Details"-Head $header
 $HTML | Out-File -FilePath "C:\inetpub\wwwroot\index.html" -Force
