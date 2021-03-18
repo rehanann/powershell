@@ -23,5 +23,5 @@ $body.Add([pscustomobject] @{"Heading" = "Dilemna"; "Data" = "schrodinger's cat 
 #Convert object to HTML and overwrite existing index
 # $HTML = $body | ConvertTo-Html -Title "WebServer Details"-Head $header
 # $HTML = ConvertTo-Html -Fragment "<h3>schrodinger's cat is alive</h3>" -Title "WebServer Details"-Head $header
-$HTML = "<h3>schrodinger's cat is alive</h3> <p/> <p/> <p/> <p/> <p/> <p/> <p/> KITNAY LOG THAY!!!!" 
+$HTML = "<h3>schrodinger's cat is alive</h3>" 
 $HTML | Out-File -FilePath "C:\inetpub\wwwroot\index.html" -Force
