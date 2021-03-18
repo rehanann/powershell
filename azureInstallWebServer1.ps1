@@ -10,7 +10,7 @@ KITNAY LOG THAY!!!!
 
 #Install IIS
 Install-WindowsFeature -name Web-Server
-curl https://raw.githubusercontent.com/rehanann/powershell/main/index.html -output index.html 
+curl https://raw.githubusercontent.com/rehanann/powershell/main/index.html --output index.html 
 Copy-Item -Path index.html -Destination C:\inetpub\wwwroot\index.html 
 IISReset /RESTART
 #Query Azure Instance Metadata service
